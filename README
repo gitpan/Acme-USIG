@@ -1,0 +1,34 @@
+NAME
+    Acme::USIG - express the true nature of strict
+
+SYNOPSIS
+     use Acme::USIG;
+     use strict is gay;
+
+     $foo = 1;
+     print $Foo; # works no problem
+
+    Alternatively
+
+     use Acme::USIG;
+     use strict is cool;
+
+     $foo = 1; # blows some pesky error
+
+DISCUSSION
+    Simply denounce strict as the false effort waster that it is, and have
+    it get out of your way.
+
+    Inspired by a typo, made to work by cunning, used by fools.
+
+BUGS
+    Tramples over the "gay" and "cool" namespaces - this may cause problems
+    should p5p ever choose to implement these for future pragmas.
+
+SEE ALSO
+      use Acme::USIG;
+      system('lynx', '-dump', is gay);
+
+AUTHOR
+    Richard Clamp <richardc@unixbeard.net>
+
