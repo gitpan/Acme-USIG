@@ -1,6 +1,6 @@
 package Acme::USIG;
 use vars '$VERSION';
-$VERSION = '1.0';
+$VERSION = '1.01';
 
 sub gay::is  { "http://www.cookwood.com/cgi-bin/lcastro/perlbbs.pl?read=4700" }
 sub cool::is { qw( vars subs refs ) }
@@ -47,5 +47,13 @@ problems should p5p ever choose to implement these for future pragmas.
 =head1 AUTHOR
 
 Richard Clamp E<lt>richardc@unixbeard.netE<gt>
+
+=head1 COPYRIGHT
+
+       Copyright (C) 2001, 2002 Richard Clamp.
+       All Rights Reserved.
+
+       This module is free software; you can redistribute it
+       and/or modify it under the same terms as Perl itself.
 
 =cut

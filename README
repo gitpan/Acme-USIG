@@ -32,3 +32,10 @@ SEE ALSO
 AUTHOR
     Richard Clamp <richardc@unixbeard.net>
 
+COPYRIGHT
+           Copyright (C) 2001, 2002 Richard Clamp.
+           All Rights Reserved.
+
+           This module is free software; you can redistribute it
+           and/or modify it under the same terms as Perl itself.
+

@@ -13,6 +13,9 @@ WriteMakefile(
               PM             => {
                                  'lib/Acme/USIG.pm'            => '$(INST_LIBDIR)/USIG.pm',
                                 },
+              PREREQ_PM      => {
+                                 'Test::More' => 0,
+                                },
               $] >= 5.005 ? ('AUTHOR'   => 'Richard Clamp <richardc@unixbeard.net>',
                              'ABSTRACT' => 'Expresses an opinion on the strict pragma',
 
