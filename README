@@ -1,4 +1,4 @@
-README for Acme::USIG 1.03
+README for Acme::USIG 1.04
 
 =head1 NAME
 
@@ -35,6 +35,12 @@ and if all goes well
 What changed over the last 3 revisions
 
 =over
+
+=item 1.04	Saturday 3d October, 2003
+
+	inspired by Matt LeBlanc we now hold onto the previous &strict::import
+	and put it back during cool::is to allow lexical declarations of faith
+
 
 =item 1.03	Saturday 3rd October, 2003
 
