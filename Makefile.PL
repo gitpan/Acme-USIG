@@ -1,35 +1,28 @@
-use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-my $module = 'lib/Acme/USIG.pm';
-WriteMakefile(
-              'NAME'         => 'Acme::USIG',
-              'VERSION_FROM' => $module, # finds $VERSION
-              'dist'         => {
-                                 COMPRESS=>'gzip -9f',
-                                 SUFFIX=>'gz',
-                                 DIST_DEFAULT => 'tardist'
-                                },
-              PM             => {
-                                 'lib/Acme/USIG.pm'            => '$(INST_LIBDIR)/USIG.pm',
-                                },
-              PREREQ_PM      => {
-                                 'Test::More' => 0,
-                                },
-              $] >= 5.005 ? ('AUTHOR'   => 'Richard Clamp <richardc@unixbeard.net>',
-                             'ABSTRACT' => 'Expresses an opinion on the strict pragma',
 
-                            ) : ()
+    unless (eval "use Module::Build::Compat 0.02; 1" ) {
+      print "This module requires Module::Build to install itself.\n";
+      
+      require ExtUtils::MakeMaker;
+      my $yn = ExtUtils::MakeMaker::prompt
+	('  Install Module::Build now from CPAN?', 'y');
+      
+      unless ($yn =~ /^y/i) {
+	warn " *** Cannot install without Module::Build.  Exiting ...\n";
+	exit 1;
+      }
 
-             );
-
-use Config;
-use File::Spec::Functions;
-sub MY::postamble {
-    my $perl     = $Config{perlpath};
-    my $pod2text = catfile($Config{bin}, "pod2text");
-    return <<EOF
-README: $module
-\t$perl $pod2text $module > README
-EOF
-}
+      require Cwd;
+      require File::Spec;
+      require CPAN;
+      
+      # Save this 'cause CPAN will chdir all over the place.
+      my $cwd = Cwd::cwd();
+      my $makefile = File::Spec->rel2abs($0);
+      
+      CPAN::Shell->install('Module::Build::Compat');
+      
+      chdir $cwd or die "Cannot chdir() back to $cwd: $!";
+      exec $^X, $makefile, @ARGV;  # Redo now that we have Module::Build
+    }
+    Module::Build::Compat->run_build_pl(args => \@ARGV);
+    Module::Build::Compat->write_makefile();

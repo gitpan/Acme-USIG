@@ -1,41 +1,61 @@
-NAME
-    Acme::USIG - express the true nature of strict
+README for Acme::USIG 1.03
 
-SYNOPSIS
-     use Acme::USIG;
-     use strict is gay;
+=head1 NAME
 
-     $foo = 1;
-     print $Foo; # works no problem
+Acme::USIG - express the true nature of strict
 
-    Alternatively
+=head1 SYNOPSIS
 
-     use Acme::USIG;
-     use strict is cool;
+ use Acme::USIG;
+ use strict is gay;
 
-     $foo = 1; # blows some pesky error
+ $foo = 1;
+ print $Foo; # works no problem
 
-DISCUSSION
-    Simply denounce strict as the false effort waster that it is, and have
-    it get out of your way.
+Alternatively
 
-    Inspired by a typo, made to work by cunning, used by fools.
+ use Acme::USIG;
+ use strict is cool;
 
-BUGS
-    Tramples over the "gay" and "cool" namespaces - this may cause problems
-    should p5p ever choose to implement these for future pragmas.
+ $foo = 1; # blows some pesky error
 
-SEE ALSO
-      use Acme::USIG;
-      system('lynx', '-dump', is gay);
 
-AUTHOR
-    Richard Clamp <richardc@unixbeard.net>
 
-COPYRIGHT
-           Copyright (C) 2001, 2002 Richard Clamp.
-           All Rights Reserved.
+=head1 INSTALLATION
 
-           This module is free software; you can redistribute it
-           and/or modify it under the same terms as Perl itself.
+ perl Build.PL
+ perl Build test
+
+and if all goes well
+
+ perl Build install
+
+=head1 HISTORY
+
+What changed over the last 3 revisions
+
+=over
+
+=item 1.03	Saturday 3rd October, 2003
+
+	maintenance release for 5.8.1.
+	5.8.1's strict.pm is stricter about what strictures it will honour
+	so now gay::is nobbles that too
+=back
+
+=head1 SEE ALSO
+
+  use Acme::USIG;
+  system('lynx', '-dump', is gay);
+
+=head1 AUTHOR
+
+Richard Clamp E<lt>richardc@unixbeard.netE<gt>
+
+=head1 COPYRIGHT
+
+Copyright (C) 2001, 2002, 2003 Richard Clamp.  All Rights Reserved.
+
+This module is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
